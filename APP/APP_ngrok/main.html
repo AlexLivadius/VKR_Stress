@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<style>
+form {
+    margin: auto;
+    width: 35%;
+}
+
+.result{
+    margin: auto;
+    width: 35%;
+    border: 5px solid #5b92e5;
+}
+</style>
+
+<head>
+    <link rel="icon" href="data:;base64,=">
+    <title>Prediction of Stress parameter</title>
+
+</head>
+
+<form action="{{url_for('main')}}" method="post">
+    <fieldset>
+        <legend>Input parameter please</legend>
+        Carbon content
+        <input name = "x1" type="float"
+        required>
+        <br>
+        <br>
+    </fieldset>
+</form>
+
+<form action="{{url_for('main')}}" method="post">
+    <fieldset>
+        <legend>Input parameter please</legend>
+        Carbon content
+        <input name = "x2" type="float"
+        required>
+        <br>
+        <br>
+        <input type="submit">
+    </fieldset>
+</form>
+
+<div class="result" align="center">
+    {% if result %}
+        <br>
+        <p style="font-size: 50px;">
+        Predicted STRESS parameter is
+        </p>
+        <p style="font-size: 50px;"> {{result}}</p>
+    {% endif %}
+</div>
